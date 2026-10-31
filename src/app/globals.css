@@ -1,26 +1,161 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --font-display: var(--font-display), "Space Grotesk", system-ui, sans-serif;
+  --font-body: var(--font-body), "Inter", system-ui, sans-serif;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* deep pine ink */
+  --color-pine-950: #06170f;
+  --color-pine-900: #0a2417;
+  --color-pine-800: #103722;
+  --color-ink: #0b2117;
+  --color-mist: #57706a;
+  --color-line: #dfece3;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* signature emerald taken from the APK logo */
+  --color-jade-100: #dcf8e8;
+  --color-jade-200: #b6efcb;
+  --color-jade-300: #72e3a4;
+  --color-jade-400: #25cf76;
+  --color-jade-500: #0ac663;
+  --color-jade-600: #079e50;
+  --color-jade-700: #066e39;
+
+  /* warm gold kept from the app's stars & trophies */
+  --color-gold-300: #fcd34d;
+  --color-gold-400: #f5a623;
+  --color-gold-500: #d9870b;
+
+  --color-cream: #f3f8f4;
+
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-float-slow: floatY 7s ease-in-out infinite;
+  --animate-float-slower: floatY 9s ease-in-out 1.2s infinite;
+  --animate-spin-slow: spinSlow 14s linear infinite;
+  --animate-pulse-glow: pulseGlow 3.2s ease-in-out infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes floatY {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-16px);
+    }
+  }
+  @keyframes spinSlow {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes pulseGlow {
+    0%,
+    100% {
+      opacity: 0.55;
+    }
+    50% {
+      opacity: 1;
+    }
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(10, 198, 99, 0.28);
+}
+
+/* ---------- custom helpers ---------- */
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* emerald gradient headline for light backgrounds */
+.text-gradient {
+  background: linear-gradient(100deg, #066e39 0%, #0ac663 55%, #0ea472 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* gold-to-mint gradient for dark surfaces */
+.text-gradient-light {
+  background: linear-gradient(100deg, #fde68a 0%, #f5a623 35%, #4ade80 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* frosted white card on the light theme */
+.glass {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(11, 33, 23, 0.09);
+  box-shadow: 0 10px 34px -14px rgba(11, 33, 23, 0.18);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(10, 198, 99, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 198, 99, 0.1) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.mask-fade-y {
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 12%, black 82%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, black 12%, black 82%, transparent);
+}
+
+.mask-fade-x {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.ring-conic {
+  background: conic-gradient(from 180deg, #0ac663, #f5a623, #2dd4bf, #0ac663);
+}
+
+.card-shine {
+  position: relative;
+  overflow: hidden;
+}
+.card-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(10, 198, 99, 0.1) 50%, transparent 60%);
+  transform: translateX(-120%);
+  transition: transform 0.9s ease;
+  pointer-events: none;
+}
+.card-shine:hover::after {
+  transform: translateX(120%);
+}
+
+/* thin custom scrollbar for horizontal strips */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

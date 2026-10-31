@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GitScope — Promotional Website
 
-## Getting Started
+Premium mobile-first landing page for the **GitScope** APK (GitHub Profile Finder mobile app).
+Built with **Next.js 16 (App Router) + Tailwind CSS v4 + Framer Motion + Lucide icons**.
 
-First, run the development server:
+Color theme follows the app itself: deep purple `#0B0620 / #7C3AED` with gold `#F5A623` accents.
+
+## Quick start
 
 ```bash
+cd gitscope-web
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+  app/
+    layout.tsx      # fonts (Space Grotesk + Inter), SEO metadata
+    page.tsx        # assembles all sections
+    globals.css     # theme tokens, keyframes, glass/grid utilities
+  components/
+    Navbar.tsx      # sticky glass navbar + mobile menu
+    Hero.tsx        # headline, search mock, store buttons, dual phones
+    Features.tsx    # 8-feature premium grid
+    Preview.tsx     # interactive Profile ↔ Ranking phone switcher
+    Ranking.tsx     # podium + leaderboard list
+    Testimonials.tsx# auto-scrolling review marquee
+    FAQ.tsx         # accordion (ID/EN mix)
+    Download.tsx    # CTA card with App Store / Play buttons
+    Footer.tsx      # sitemap + disclaimer
+    Section.tsx     # shared section header
+    icons.tsx       # custom GitHub brand icon (lucide removed brand icons)
+  lib/cn.ts
+public/assets/
+  logo.jpeg            # GitScope app icon
+  screen-profile.png   # real app screenshot (profile)
+  screen-ranking.png   # real app screenshot (ranking)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Notes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Mobile-first responsive: base styles target 390px, `sm:`/`md:`/`lg:` progressively enhance.
+- Brand icons (GitHub logo) are custom SVG in `icons.tsx` because current `lucide-react`
+  no longer ships brand icons.
+- Leaderboard/testimonial content is sample data for illustration.
+- Suggested next steps: wire store links to real Play/App Store URLs, add real QR code,
+  connect `metadataBase` to the production domain before deploying.
