@@ -15,14 +15,14 @@ const body = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "GitScope — GitHub di Sakumu: Cari Profil, Bedah Repo, Kejar Ranking!",
+  title: "Gitscope — Temukan Talenta dari Bukti Nyata",
   description:
-    "GitScope, aplikasi mobile gratis buat menjelajahi GitHub. Kepoin profil developer mana pun, bedah repositorinya, dan adu peringkat dengan developer terbaik Indonesia — tanpa perlu akun!",
+    "Platform talent discovery berbasis bukti nyata dari GitHub. Temukan developer lewat proyek, kontribusi, dan teknologi yang benar-benar dipakai — lengkap dengan scoring transparan, candidate pipeline, dan chat internal.",
   metadataBase: new URL("https://gitscope.app"),
   openGraph: {
-    title: "GitScope — GitHub di Sakumu!",
+    title: "Gitscope — Temukan Talenta dari Bukti Nyata",
     description:
-      "Kepoin profil, bedah repo, dan kejar ranking developer Indonesia. Gratis, tanpa akun!",
+      "Bukan sekadar CV. Lihat karya yang benar-benar berbicara. Talent discovery berbasis bukti nyata dari GitHub.",
     images: ["/assets/screen-profile.png"],
   },
 };

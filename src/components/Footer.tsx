@@ -5,7 +5,7 @@ import { GithubIcon } from "./icons";
 const columns = [
   {
     title: "Produk",
-    links: ["Fitur Unggulan", "Ranking", "Yang Baru", "Roadmap"],
+    links: ["Fitur Utama", "Cara Kerja", "Export Report", "Roadmap"],
   },
   {
     title: "Bantuan",
@@ -32,8 +32,9 @@ export function Footer() {
               </span>
             </a>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-mist">
-              Teman setia para developer Indonesia. Kepoin profil, bedah repo, dan kejar ranking —
-              semuanya dari HP-mu. Gratis selamanya!
+              Platform talent discovery berbasis bukti nyata dari GitHub — temukan
+              developer, baca evidence di balik skor, dan kelola pipeline dalam satu
+              ruang kerja.
             </p>
             <div className="mt-6 flex gap-2.5">
               {[
@@ -78,7 +79,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-ink/10 pt-6 text-xs text-mist sm:flex-row">
-          <p>© 2026 GitScope. Dibuat dengan bangga oleh developer, untuk developer Indonesia.</p>
+          <p>© 2026 GitScope. Talent discovery berbasis bukti nyata.</p>
           <p>
             Data dari <span className="text-ink/70">GitHub API</span> · Bukan afiliasi resmi
             GitHub, Inc.

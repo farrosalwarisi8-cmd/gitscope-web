@@ -10,8 +10,7 @@ import { cn } from "@/lib/cn";
 const links = [
   { label: "Fitur", href: "#fitur" },
   { label: "Preview", href: "#preview" },
-  { label: "Ranking", href: "#ranking" },
-  { label: "Testimoni", href: "#testimoni" },
+  { label: "Cara Kerja", href: "#cara-kerja" },
   { label: "FAQ", href: "#faq" },
 ];
 
@@ -78,7 +77,7 @@ export function Navbar() {
             className="group flex items-center gap-2 rounded-full bg-gradient-to-r from-jade-600 via-jade-500 to-emerald-400 px-5 py-2.5 text-sm font-bold text-white shadow-[0_12px_32px_-10px_rgba(10,198,99,0.8)] transition hover:shadow-[0_16px_40px_-10px_rgba(10,198,99,1)]"
           >
             <Download className="h-4 w-4 transition group-hover:translate-y-0.5" />
-            Download Gratis
+            Gabung Beta
           </a>
         </div>
 
@@ -116,7 +115,7 @@ export function Navbar() {
               className="mt-2 flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-jade-600 to-emerald-500 px-4 py-3.5 text-[15px] font-bold text-white"
             >
               <Download className="h-4 w-4" />
-              Download GitScope — Gratis!
+              Download Gitscope
             </a>
           </motion.nav>
         )}

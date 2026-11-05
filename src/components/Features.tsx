@@ -2,65 +2,51 @@
 
 import { motion } from "framer-motion";
 import {
-  Search,
-  FolderGit2,
-  Trophy,
-  Languages,
-  CalendarDays,
-  Bookmark,
-  Share2,
-  Zap,
+  Gauge,
+  Compass,
+  Layers,
+  MessageSquare,
+  Rocket,
+  FileText,
 } from "lucide-react";
 import { Section } from "./Section";
 
 const features = [
   {
-    icon: Search,
+    icon: Gauge,
     tint: "bg-jade-500/15 text-jade-700",
-    title: "Cari Profil Secepat Kilat",
-    desc: "Temukan developer mana pun dalam hitungan detik — lengkap dengan saran pintar dan riwayat pencarianmu.",
+    title: "Transparent Scoring",
+    desc: "Setiap skor dilengkapi rincian komponen dan evidence — recruiter memahami konteks di balik angka, bukan menebak-nebak.",
   },
   {
-    icon: FolderGit2,
+    icon: Compass,
     tint: "bg-emerald-500/15 text-emerald-700",
-    title: "Bedah Repositori Total",
-    desc: "Intip stars, forks, dan README setiap repo dalam tampilan mobile yang rapi dan nyaman dibaca.",
+    title: "Global Talent Discovery",
+    desc: "Cari developer berdasarkan negara, kota, teknologi, dan ketersediaan — cakupan global, tidak terbatas jaringan lokal.",
   },
   {
-    icon: Trophy,
+    icon: Layers,
     tint: "bg-gold-400/20 text-gold-500",
-    title: "Ranking Indonesia & Dunia",
-    desc: "Naiki papan peringkat berdasarkan followers dan impact — buktikan kamu termasuk yang terbaik!",
+    title: "Candidate Pipeline",
+    desc: "Simpan kandidat ke pipeline — Saved, Interviewing, Hired — tersimpan permanen dan mudah ditindaklanjuti.",
   },
   {
-    icon: Languages,
+    icon: MessageSquare,
     tint: "bg-teal-500/15 text-teal-700",
-    title: "Peta Bahasa Pemrograman",
-    desc: "Lihat bahasa apa saja yang dikuasai setiap developer lewat visualisasi yang cantik dan mudah dipahami.",
+    title: "Realtime Chat",
+    desc: "Hubungi developer lewat chat internal dengan konteks yang jelas — tanpa menampilkan email pribadi mereka.",
   },
   {
-    icon: CalendarDays,
+    icon: Rocket,
     tint: "bg-jade-500/15 text-jade-700",
-    title: "Heatmap Kontribusi",
-    desc: "Setahun penuh aktivitas coding tersaji dalam grafik kontribusi yang tajam dan bisa digeser-geser.",
+    title: "Project Publishing",
+    desc: "Developer mempublikasikan proyek terverifikasi: deskripsi, teknologi, demo, dan peran mereka di dalamnya.",
   },
   {
-    icon: Bookmark,
-    tint: "bg-emerald-500/15 text-emerald-700",
-    title: "Simpan & Baca Offline",
-    desc: "Bookmark profil dan repo favoritmu — tetap bisa dibuka kapan pun, bahkan tanpa internet.",
-  },
-  {
-    icon: Share2,
-    tint: "bg-teal-500/15 text-teal-700",
-    title: "Kartu Profil Siap Flexing",
-    desc: "Bikin kartu profil keren berisi statistikmu dan pamerkan ke medsos dalam sekali ketuk!",
-  },
-  {
-    icon: Zap,
+    icon: FileText,
     tint: "bg-gold-400/20 text-gold-500",
-    title: "Ngebut Tanpa Lemot",
-    desc: "Rasakan kecepatan setara aplikasi bawaan: data tersimpan cerdas dan scrolling mulus 60fps.",
+    title: "Export Report",
+    desc: "Buat laporan PDF per kandidat — ringkasan skor, evidence, heatmap kontribusi, dan informasi proyek.",
   },
 ];
 
@@ -70,22 +56,22 @@ export function Features() {
       <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-[640px] -translate-x-1/2 rounded-full bg-jade-200/60 blur-[120px]" />
       <Section
         id="fitur"
-        eyebrow="Kenapa GitScope?"
+        eyebrow="Fitur Utama"
         title={
           <>
-            Semua kehebatan GitHub, <span className="text-gradient">dalam genggamanmu.</span>
+            Satu ruang kerja untuk <span className="text-gradient">talent discovery.</span>
           </>
         }
-        description="Delapan alasan kenapa ratusan ribu developer beralih ke GitScope — dan kenapa kamu harus ikut sekarang juga."
+        description="Dari analisis bukti teknis sampai pipeline dan chat internal — semua proses screening berjalan di satu tempat."
       >
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
           {features.map((f, i) => (
             <motion.div
               key={f.title}
               initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "0px" }}
-              transition={{ duration: 0.5, delay: (i % 4) * 0.08 }}
+              transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
               className="card-shine glass group rounded-3xl p-6 transition duration-300 hover:-translate-y-1.5 hover:border-jade-500/40 hover:shadow-[0_24px_60px_-20px_rgba(10,198,99,0.4)]"
             >
               <span

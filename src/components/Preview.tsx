@@ -10,28 +10,28 @@ import { cn } from "@/lib/cn";
 const tabs = [
   {
     id: "profile",
-    label: "Bedah Profil",
+    label: "Analisis Profil",
     icon: UserRound,
     image: "/assets/screen-profile.png",
-    alt: "Layar profil GitScope",
-    title: "Profil yang bikin betah di-scroll",
+    alt: "Layar analisis profil Gitscope",
+    title: "Profil yang dibaca dari bukti nyata",
     points: [
-      "Foto, bio, followers & following — semua terlihat dalam sekali lirik",
-      "Repo andalan dengan jumlah bintangnya, tersusun rapi",
-      "Grafik bahasa dan kontribusi setahun penuh dalam satu layar",
+      "Skor dengan rincian komponen dan evidence yang bisa ditelusuri",
+      "Peta bahasa dan heatmap kontribusi setahun penuh",
+      "Proyek terpublikasi lengkap dengan teknologi dan tautan demo",
     ],
   },
   {
     id: "ranking",
-    label: "Ranking Nasional",
+    label: "Talent Discovery",
     icon: Trophy,
     image: "/assets/screen-ranking.png",
-    alt: "Layar ranking GitScope",
-    title: "Buktikan kamu yang terbaik!",
+    alt: "Layar talent discovery Gitscope",
+    title: "Temukan developer sesuai kebutuhanmu",
     points: [
-      "Papan peringkat Indonesia & dunia yang update setiap hari",
-      "Podium spesial untuk 3 developer teratas — kejar posisinya!",
-      "Ketuk nama siapa pun untuk langsung intip profilnya",
+      "Cari berdasarkan negara, kota, teknologi, dan keyword",
+      "Hanya developer yang memilih tampil (opt-in) yang muncul di Discover",
+      "Simpan ke pipeline dan lanjutkan lewat chat internal",
     ],
   },
 ] as const;
@@ -54,10 +54,10 @@ export function Preview() {
         eyebrow="Intip Aplikasinya"
         title={
           <>
-            Dibuat untuk disentuh, <span className="text-gradient">bukan di-klik.</span>
+            Dibaca dari bukti, <span className="text-gradient">bukan dari klaim.</span>
           </>
         }
-        description="Dua layar andalan, langsung dari aplikasi aslinya. Geser-geser sesukamu — persis seperti di HP-mu nanti."
+        description="Dua layar andalan langsung dari aplikasi: analisis profil developer dan talent discovery. Geser untuk melihatnya."
       >
         {/* tab switcher */}
         <div className="glass mx-auto mb-10 flex w-full max-w-md items-center gap-1 rounded-2xl !bg-white/70 p-1.5">
@@ -74,7 +74,7 @@ export function Preview() {
             >
               <t.icon className="h-4 w-4" />
               <span className="hidden sm:inline">{t.label}</span>
-              <span className="sm:hidden">{i === 0 ? "Profil" : "Ranking"}</span>
+              <span className="sm:hidden">{i === 0 ? "Profil" : "Discover"}</span>
             </button>
           ))}
         </div>
